@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import xhr from 'xhr';
 import LEDControl from './LEDControl';
 import { LEDManager } from './managers/LEDManager';
 
@@ -16,7 +17,7 @@ class App extends Component {
 
     // Initialize state.
     this.state = {
-      program: 'ld a,1 |\nout (0),a |\nld a,2 |\nout (0),a |\nld a,4 |\nout (0),a |\nld a,8 |\nout (0),a |\nld a,16 |\nout (0),a |\nld a,32 |\nout (0),a |\nld a,64 |\nout (0),a |\nld a,128 |\nout (0),a |\nld a,0 |\nout (0),a |\nld a,24 |\nout (0),a |\nld a,36 |\nout (0),a |\nld a,66 |\nout (0),a |\nld a,129 |\nout (0),a |\nld a,255 |\nout (0),a |\nld z,0 |\nout (0),z |',
+      program: '',
       status: {
         style: this.statusStyles['none'],
         errors: [],
@@ -24,9 +25,29 @@ class App extends Component {
       diodes: [0,0,0,0,0,0,0,0]
     };
 
+    // Load example program.
+    loadExample(function(program) {
+      this.state.program = program;
+    });
+
     // Setup events.
     this.onRun = this.onRun.bind(this);
     this.onProgramChange = this.onProgramChange.bind(this);
+  };
+
+  loadExample(callback) {
+    xhr({
+      url: 'https://github.com/primaryobjects/blinking-leds/tree/master/src/examples/default.txt'
+    }, function(err, data) {
+      if (!err) {
+        if (callback) {
+          callback(data);
+        }
+      }
+      else {
+        console.log('Error loading example program. ' + err);
+      }
+    });
   };
 
   onRun(e) {
