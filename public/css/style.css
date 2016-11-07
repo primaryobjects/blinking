@@ -149,3 +149,7 @@ i.diode.off {
 .form-and-links-container ul {
   list-style-type: none;
 }
+
+.mastfoot {
+  font-size: 16px;
+}
