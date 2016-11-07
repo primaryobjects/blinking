@@ -20,7 +20,7 @@ export var LEDManager = {
     var result = { result: true, diodes: [], errors: [] };
 
     // Break program into lines.
-    var lines = program.split('\r\n');
+    var lines = program.split(/[\r\n]/g);
     for (var i=0; i < lines.length; i++) {
       var line = lines[i].toLowerCase();
       var lineNum = parseInt(i, 10) + 1;
