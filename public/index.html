@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Blinking LEDs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/shader.css" rel="stylesheet">
+  </head>
+
+  <body class="theme-darkness">
+    <!-- Background container -->
+    <div id="background-container" class="background-container">
+        <div id="background-output" class="background-output"><canvas width="1195" height="813" style="display: block;"></canvas></div>
+        <div id="vignette" class="background-vignette"></div>
+        <div id="noise" class="background-noise"></div>
+    </div>
+    <!-- /Background container -->
+
+    <!-- Main content -->
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <h1 class="header col-sm-8 col-sm-offset-2">Blinking LEDs</h1>
+            </div>
+
+            <div id="root" class="row"></div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="form-and-links-container col-sm-8 col-sm-offset-2">
+                    <div class="row">
+                      <h2 style='margin-top: 25px;'>Writing an LED Program</h2>
+                      <p>To make the lights blink, use the following instructions:</p>
+                      <ul>
+                        <li>ld a,&lt;num&gt; |</li>
+                        <li>out (0),a |</li>
+                      </ul>
+                      <p>
+                        Instruction ld a,<num> sets internal 8-bit register A to the given number. Instruction out (0),a updates the LEDs according to the current number in A. The LED-0's state corresponds to bit 0 of number in A, when that number is represented in binary. For example, when A = 5, the LED state after out instruction is ".....*.*".
+                      </p>
+                    </div>
+
+                    <!-- Social links -->
+                    <div class="social-links">
+                        <a href="http://demo.shnayder.pro/works/shader/darkness.index.html#" class="icon-facebook"></a>
+                        <a href="http://demo.shnayder.pro/works/shader/darkness.index.html#" class="icon-twitter-alt"></a>
+                        <a href="http://demo.shnayder.pro/works/shader/darkness.index.html#" class="icon-googleplus"></a>
+                        <a href="http://demo.shnayder.pro/works/shader/darkness.index.html#" class="icon-youtube"></a>
+                        <a href="http://demo.shnayder.pro/works/shader/darkness.index.html#" class="icon-github-alt"></a>
+                    </div>
+                    <!-- /Social links -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.countdown.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/4.0.1/placeholders.jquery.min.js"></script>
+    <script src="js/flat-surface-shader.js"></script>
+    <script src="js/main.config.js"></script>
+    <script src="js/shader.js"></script>
+  </body>
+</html>
