@@ -26,23 +26,21 @@ class App extends Component {
     };
 
     // Load example program.
-    this.loadExample(function(program) {
-      this.setState({ program: program });
-    });
+    this.loadExample();
 
     // Setup events.
     this.onRun = this.onRun.bind(this);
     this.onProgramChange = this.onProgramChange.bind(this);
   };
 
-  loadExample(callback) {
+  loadExample() {
+    var self = this;
+
     xhr({
       url: 'https://raw.githubusercontent.com/primaryobjects/blinking/master/src/examples/default.txt'
     }, function(err, data) {
       if (!err) {
-        if (callback) {
-          callback(data);
-        }
+        self.setState({ program: data.body });
       }
       else {
         console.log('Error loading example program. ' + err);
@@ -85,7 +83,7 @@ class App extends Component {
         <form id='program-form'>
           <div className='form-group'>
             <label htmlFor='code'>Program</label>
-            <textarea className='form-control' defaultValue={ this.state.program } onChange={ this.onProgramChange } />
+            <textarea className='form-control' value={ this.state.program } onChange={ this.onProgramChange } />
           </div>
           <div className='form-group'>
             <button id='btn-run' type='submit' className='btn btn-primary' onClick={ this.onRun }>Run</button>
