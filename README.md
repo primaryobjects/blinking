@@ -9,6 +9,13 @@ Likewise, a [program](https://github.com/primaryobjects/blinking-leds/tree/maste
 
 Multiple calls to output will be shown with a delay of 1 second between them. This creates a nifty animation as the bulbs cycle through commands!
 
+Demo
+----
+
+Try it out!
+
+http://primaryobjects.github.io/leds
+
 Examples
 -------
 
@@ -53,13 +60,14 @@ ld d,0 |
 out (0),d |
 ```
 
+#### Output
 
-Demo
-----
-
-Try it out!
-
-http://primaryobjects.github.io/leds
+```
+......*
+.....*.
+....*..
+.......
+```
 
 Why
 ---
