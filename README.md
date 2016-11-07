@@ -14,7 +14,7 @@ Demo
 
 Try it out!
 
-http://primaryobjects.github.io/leds
+http://primaryobjects.github.io/blinking
 
 Examples
 -------
