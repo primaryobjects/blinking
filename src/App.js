@@ -37,7 +37,7 @@ class App extends Component {
 
   loadExample(callback) {
     xhr({
-      url: 'https://github.com/primaryobjects/blinking-leds/tree/master/src/examples/default.txt'
+      url: 'https://raw.githubusercontent.com/primaryobjects/blinking/master/src/examples/default.txt'
     }, function(err, data) {
       if (!err) {
         if (callback) {
