@@ -3,6 +3,43 @@ Blinking LEDs
 
 Use a simple programming language to turn LED lights on and off.
 
+LED lights can be turned off and on according to the 8-bit representation of a binary number stored in memory. For example, in a [program](https://github.com/primaryobjects/blinking-leds/tree/master/src/examples/rightmost.txt) that stores the value 2 in the variable 'a', and then calls the output command, the second from the right bulb will turn on. 2 = 0000010 which corresponds to turning on the second from the right bulb.
+
+Likewise, a [program](https://github.com/primaryobjects/blinking-leds/tree/master/src/examples/righttwo.txt) that stores the value 3 in the variable 'x' and then calls the output command, will light up the two right-most bulbs. 3 = 0000011 which corresponds to turning on the two right-most bulbs.
+
+Multiple calls to output will be shown with a delay of 1 second between them. This creates a nifty animation as the bulbs cycle through commands!
+
+Examples
+-------
+
+### Light Right-Most Bulb
+
+```
+ld a,1 |
+out (0),a |
+```
+
+#### Output
+
+```
+......*
+```
+
+
+### Light Second From Right Bulb
+
+```
+ld a,2 |
+out (0),a |
+```
+
+#### Output
+
+```
+.....*.
+```
+
+
 Demo
 ----
 
