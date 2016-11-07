@@ -21,9 +21,9 @@ export var LEDManager = {
 
     // Break program into lines.
     var lines = program.split('\n');
-    for (var i in lines) {
+    for (var i=0; i < lines.length; i++) {
       var line = lines[i].toLowerCase();
-      var lineNum = parseInt(i) + 1;
+      var lineNum = parseInt(i, 10) + 1;
 
       if (line.length > 0) {
         // Break line into parts.

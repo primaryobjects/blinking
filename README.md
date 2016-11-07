@@ -25,7 +25,6 @@ out (0),a |
 ......*
 ```
 
-
 ### Light Second From Right Bulb
 
 ```
@@ -37,6 +36,21 @@ out (0),a |
 
 ```
 .....*.
+```
+
+### Animated Bulbs
+
+Multiple output commands will light bulbs with a 1 second delay between outputs, demonstrating a cool animation effect. Here is a simple example [program](https://github.com/primaryobjects/blinking-leds/tree/master/src/examples/animated.txt) with 4 output commands, with the last command turning all of the bulbs off.
+
+```
+ld a,1 |
+out (0),a |
+ld b,2 |
+out (0),b |
+ld c,4 |
+out (0),c |
+ld d,0 |
+out (0),d |
 ```
 
 

@@ -26,8 +26,8 @@ class App extends Component {
     };
 
     // Load example program.
-    loadExample(function(program) {
-      this.state.program = program;
+    this.loadExample(function(program) {
+      this.setState({ program: program });
     });
 
     // Setup events.

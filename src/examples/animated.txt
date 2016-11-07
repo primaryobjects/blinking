@@ -1,0 +1,8 @@
+ld a,1 |
+out (0),a |
+ld b,2 |
+out (0),b |
+ld c,4 |
+out (0),c |
+ld d,0 |
+out (0),d |
